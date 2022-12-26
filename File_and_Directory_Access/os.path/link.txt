@@ -1,0 +1,1 @@
+/home/vadim/python_library/File_and_Directory_Access/os.path/file.txt
