@@ -1,4 +1,4 @@
-            # Файлы и каталоги (Files and Directories)
+# Файлы и каталоги (Files and Directories)
 """os.walk(top, topdown=True, onerror=None, followlinks=False)"""
 # Генерируйте имена файлов в дереве каталогов, проходя по дереву сверху вниз или
 # снизу вверх. Для каждого каталога в дереве с корнем в верхней части каталога
@@ -48,26 +48,25 @@
 # просматривается ни в одном из подкаталогов CVS:
 import os
 from os.path import join, getsize
+
 print((os.listdir('.')))
-# path = os.walk('.')
-path = os.walk('/home/vadim/python_library/Generic_Operating_System_Services/')
-print(path)
+path = os.walk('.', topdown=True)
 for root, dirs, files in path:
-    # for name in files:
-    #     print("files: ", os.path.join(root, name))
-    # for name in dirs:
-    #     print("dirs: ", os.path.join(root, name))
-    print(root, "consumes", end=" ")    # потребляет
+    print(root, "consumes", end=" ")  # потребляет
     print(sum(getsize(join(root, name)) for name in files), end=" ")
-    print("bytes in", len(files), "non-directory files")   # без каталога
+    print("bytes in", len(files), "non-directory files")  # файлах, не являющихся каталогами
     if 'CVS' in dirs:
         dirs.remove('CVS')  # не просматриваем каталог `CVS`
 
-
-
-
 # В следующем примере (простая реализация Shutil.rmtree()) необходимо пройти по дереву
 # снизу вверх, rmdir() не позволяет удалить каталог до того, как каталог станет пустым:
+# заменено на os.path.join:
+print('-----------------------------------------------------------')
+for root, dirs, files in os.walk(".", topdown=False):
+    for name in files:
+        print('     name in files:', os.path.join(root, name))
+    for name in dirs:
+        print('name in dirs:', os.path.join(root, name))
 
 # Вызывает событие аудита os.walk с аргументами top, topdown, onerror, followlinks.
 # Изменено в версии 3.5: эта функция теперь вызывает os.scandir() вместо os.listdir(),
