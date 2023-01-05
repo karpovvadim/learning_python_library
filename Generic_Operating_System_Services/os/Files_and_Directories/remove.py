@@ -12,7 +12,9 @@
 #      Изменено в версии 3.6: принимает объект, подобный пути.
 import os
 print("--------------------to remove a file---------------------------")
+open('filex.txt', 'w')
 file = 'filex.txt'
+print(os.path.isfile(file))
 location = "/home/vadim/PycharmProjects/learning_python_library/" \
            "Generic_Operating_System_Services/os/Files_and_Directories/"
 path = os.path.join(location, file)
@@ -20,28 +22,24 @@ os.remove(path)
 print("%s has been removed successfully" % file)
 
 print("------------- If the specified path is a directory-------------")
-path = "/home/User/Documents/ihritik"
+path = "/home/vadim/PycharmProjects/learning_python_library/" \
+           "Generic_Operating_System_Services/os/ihritik"
 
-# Remove the specified
-# file path
-os.remove(path)
+#os.remove(path)
 print("% s has been removed successfully" % file)
 
-# if the specified path
-# is a directory then
-# 'IsADirectoryError' error
-# will raised
+# if the specified path is a directory then 'IsADirectoryError' error will raised
+# если указанный путь – это каталог, возникнет ошибка "IsADirectoryError"
+# Точно так же, если указанный путь к файлу не существует или недействителен,
+# будет вызвана соответствующая ошибка OSError.
 
-# Similarly if the specified
-# file path does not exists or
-# is invalid then corresponding
+# Similarly if the specified file path does not exists or is invalid then corresponding
 # OSError will be raised
 
 print("---------Handling error while using os.remove() method----------------")
 path = '/home/User/Documents/ihritik'
 
-# Remove the specified
-# file path
+# Remove the specified file path
 try:
     os.remove(path)
     print("% s removed successfully" % path)

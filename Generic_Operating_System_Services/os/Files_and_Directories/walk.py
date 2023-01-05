@@ -62,6 +62,11 @@ for root, dirs, files in path:
 # снизу вверх, rmdir() не позволяет удалить каталог до того, как каталог станет пустым:
 # заменено на os.path.join:
 print('-----------------------------------------------------------')
+path = "./Linux_extended_attributes/a/b/c"
+try:
+    os.makedirs(path, 0o774)
+except FileExistsError:
+    print(os.path.isdir(path))
 for root, dirs, files in os.walk(".", topdown=False):
     for name in files:
         print('     name in files:', os.path.join(root, name))

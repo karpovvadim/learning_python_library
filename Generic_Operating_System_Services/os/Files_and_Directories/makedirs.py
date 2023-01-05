@@ -26,17 +26,21 @@ import os
 directory = "Interface_to_the_scheduler"  # Интерфейс к планировщику
 parent_dir = "/home/vadim/PycharmProjects/learning_python_library/Generic_Operating_System_Services/os/"
 path = os.path.join(parent_dir, directory)
-os.makedirs(path)
-print("Directory '%s' created" % directory)
-
+try:
+    os.makedirs(path)
+except FileExistsError:
+    print("Directory '%s' created" % directory)
+print("-----------------------------------------------")
 directory = "c"
 parent_dir = "/home/vadim/PycharmProjects/learning_python_library/" \
              "Generic_Operating_System_Services/os/Files_and_Directories/" \
              "Linux_extended_attributes/a/b"
 mode = 0o666
 path = os.path.join(parent_dir, directory)
-os.makedirs(path, mode)
-print("Directory '%s' created" % directory)
+try:
+    os.makedirs(path, mode)
+except FileExistsError:
+    print("Directory '%s' created" % directory)
 
 # 'Linux extended attributes', 'a', and 'b' will also be created if it does not exists
 
