@@ -10,19 +10,15 @@
 # не вызывает исключение, функция теперь повторяет системный вызов вместо создания
 # исключения InterruptedError (обоснование см. в PEP 475).
 import os
-
-# Open file
-fd = os.open("f1.txt", os.O_RDWR | os.O_CREAT)
-
-# Writing text
+path = "f1.txt"
+fd = os.open(path, os.O_RDWR | os.O_CREAT)
 ret = os.write(fd, b"This is test")
-
+# ret состоит из количества байтов, записанных в f1.txt
 # ret consists of number of bytes written to f1.txt
-print("the number of bytes written: ")
-print(ret)
-
+print("the number of bytes written: ", ret)
 print("written successfully")
 
 # Close opened file
 os.close(fd)
 print("Closed the file successfully!!")
+os.unlink(path)

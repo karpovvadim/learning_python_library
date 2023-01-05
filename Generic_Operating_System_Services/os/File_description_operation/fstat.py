@@ -25,8 +25,6 @@ fd = os.open("foo.txt", os.O_RDWR | os.O_CREAT)
 # Now get the touple
 info = os.fstat(fd)
 print("File Info :", info)
-# Now get uid of the file
-print("UID of the file :%d" % info.st_uid)
-# Now get gid of the file
-print("GID of the file :%d" % info.st_gid)
+print("UID of the file :%d" % info.st_uid)  # Now get uid of the file
+print("GID of the file :%d" % info.st_gid)  # Now get gid of the file
 os.close(fd)
