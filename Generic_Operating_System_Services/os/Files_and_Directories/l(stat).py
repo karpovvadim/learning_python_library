@@ -42,11 +42,15 @@
 # операционная система достигает точки повторной обработки, за которой она не может
 # следовать, stat теперь возвращает информацию об исходном пути, как если бы было
 # указано follow_symlinks=False, а не вызывающее ошибку.
-
+print('-----------os.stat-----------------------------------------------')
 import os
-path = 'tt.txt'
+path = 'remove.py'
 # Get the status of the specified path
 status = os.stat(path)
-# Print the status
-# of the specified path
-print(status)
+# Print the status of the specified path
+print('remove.py:', status)
+print("status.st_size:", status.st_size)
+print("status.st_mode:", status.st_mode)
+print('-----------os.lstat-----------------------------------------------')
+filename = 'mkfifo.py'
+print('mkfifo.py:', os.lstat(filename))
