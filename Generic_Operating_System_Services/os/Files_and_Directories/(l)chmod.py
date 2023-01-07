@@ -79,17 +79,14 @@ stat.S_IXOTH - Другие имеют разрешение на исполне�
 import os
 import stat
 
-print("-----1--'walk.py'------------------------------------------")
-# f = 'walk.py'
+print("-----1--------------------------------------------------")
 f = '(l)chmod.py'
 st = os.stat(f).st_mode
 print(stat.filemode(st))
-# '-rw-rw-r--'
 
 os.chmod(f, 0o754)
 st = os.stat(f).st_mode
 print(stat.filemode(st))
-# '-rwxr-xr--'
 
 print("-----2---'tt.txt'-----------------------------------------")
 filename = 'tt.txt'
@@ -122,8 +119,8 @@ os.chmod("tt.txt", stat.S_IROTH)
 print("File access changed, can be read by others now.")
 # Доступ к файлу изменен, теперь его могут читать другие
 
-# print("-----4--------------------------------------------")
+print("-----4--------------------------------------------")
 path = 'chown.py'
 print("\nOwner id of the file:", os.stat(path).st_uid)
 print("Group id of the file:", os.stat(path).st_gid)
-# os.chmod(path, stat.S_IRWXU)
+

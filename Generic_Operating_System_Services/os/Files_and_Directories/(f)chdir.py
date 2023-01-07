@@ -22,7 +22,7 @@ print("1_os.getcwd():", os.getcwd())  # распечатать текущий к
 os.chdir(os.pardir)  # изменить текущий рабочий каталог на указанный путь
 print("2_os.getcwd():", os.getcwd())  # проверьте путь, используя getcwd()
 # изменим ещё раз текущий рабочий каталог
-os.chdir('/home/vadim/python_library/Built_in_Types/Binary_Sequence_Types')
+os.chdir(os.pardir)
 print("3_os.getcwd():", os.getcwd())  # распечатать текущий каталог
 
 
@@ -34,16 +34,16 @@ print("3_os.getcwd():", os.getcwd())  # распечатать текущий к
 #       Доступность: Юникс.
 print("----Использование метода os.fchdir() для изменения текущего рабочего каталога---")
 print(os.getcwd())
-path_1 = '/home/vadim/python_library/Generic_Operating_System_Services/os/Files_and_Directories/'
+path_1 = '..'
 fd = os.open(path_1, os.O_RDONLY)
 os.fchdir(fd)
 print("Current working directory changed")
 print(os.getcwd())
 
 print("------Обработка возможных ошибок при использовании метода os.fchdir()-------")
-path = ""  # "/home/vadim/python_library/Generic_Operating_System_Services/os/Files_and_Directories/(f)chdir.py"
+fp = "file4.txt"
 try:
-    fd = os.open(path, os.O_RDONLY)
+    fd = os.open(fp, os.O_RDONLY)
     try:
         os.fchdir(fd)
         print("Current working directory changed")
