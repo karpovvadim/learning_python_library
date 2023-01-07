@@ -3,10 +3,6 @@
 # (побитовое ИЛИ) следующих значений (как определено в модуле stat):
 # метод в Python, используемый для установки флагов пути к числовым флагам; доступен
 # только в Unix. Флаги могут принимать комбинацию (побитовое ИЛИ) значений флагов.
-import errno
-import stat
-import os
-# import why as why
 
 """
     stat.UF_NODUMP          Не сбрасывайте файл.
@@ -22,7 +18,7 @@ import os
     stat.SF_NOUNLINK        Файл нельзя переименовывать или удалять.
     stat.SF_SNAPSHOT        Файл является файлом моментального снимка.
 """
-# Эта функция может поддерживать not following symlinks
+# Эта функция может поддерживать not following symlinks (не следующие символические ссылки).
 # (не переходить по символическим ссылкам: если для параметра follow_symlinks установлено
 # значение False, а последним элементом пути для работы является символическая ссылка,
 # функция будет работать с самой символической ссылкой, а не с файлом, на который указывает
@@ -39,42 +35,13 @@ import os
 #      Вызывает событие аудита os.chflags с аргументами path, flags.
 #      Доступность: Unix, не Emscripten, не WASI.
 #      Изменено в версии 3.6: принимает объект, подобный пути.
-"""
-# defining path and flag  (определение пути и флага)
-path = "/home/vadim/learning_python_library/Generic_Operating_System_Services/os/Files_and_Directories/1_overview.txt"
-flag = stat.SF_NOUNLINK
-flag_2 = stat.SF_NOUNLINK
-# assigning val to function chflags()  (назначение val функции chflags())
-val = os.chflags(path, flag, flag_2)
+
+import stat
+import os
+path = "tt.py"
+flags = stat.SF_NOUNLINK
+val = os.chflags(path, flags)
 # Doesn't return any value, so nothing will be printed
 # Не возвращает никакого значения, поэтому ничего не будет напечатано
 print("Operation successful, returning value: %s" % val)
 # Операция выполнена успешно, возвращаемое значение: None
-"""
-src = "/home/vadim/PycharmProjects/learning_python_library/Generic_Operating_System_Services/os/Files_and_Directories" \
-      "/tt.txt "
-dst = "/home/vadim/PycharmProjects/learning_python_library/Generic_Operating_System_Services/os/"
-st = os.stat(src)
-print(st)
-mode = stat.S_IMODE(st.st_mode)
-print(mode)
-if hasattr(os, 'utime'):
-    os.utime(dst, (st.st_atime, st.st_mtime))
-    print("os.utime(dst, (st.st_atime, st.st_mtime)):")
-if hasattr(os, 'chmod'):
-    os.chmod(dst, mode)
-    print("os.chmod(dst, mode)")
-if hasattr(os, 'chflags') and hasattr(st, 'st_flags'):
-    print("EOPNOTSUPP, ENOTSUP")
-    try:
-        os.chflags(dst, st.st_flags)
-        print("os.chflags(dst, st.st_flags):")
-    except (OSError, why):
-        for err in 'EOPNOTSUPP', 'ENOTSUP':
-            if hasattr(errno, err) and why.errno == getattr(errno, err):
-
-                break
-
-            else:
-
-                raise

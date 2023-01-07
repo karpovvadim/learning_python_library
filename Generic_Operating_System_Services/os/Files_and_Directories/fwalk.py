@@ -18,19 +18,19 @@ import os
 print((os.listdir('.')))
 for root, dirs, files, rootfd in os.fwalk(top='./'):
     print(root, "consumes", end="")
-    print(sum([os.stat(name, dir_fd=rootfd).st_size for name in files]),
-          end="")
+    print(sum([os.stat(name, dir_fd=rootfd).st_size for name in files]), end="")
     print("bytes in", len(files), "non-directory files")
     if 'CVS' in dirs:
         dirs.remove('CVS')  # не посещать каталоги CVS
+
+print('-----------------------------------------------------------')
 # В следующем примере важно пройтись по дереву снизу вверх: rmdir() не позволяет удалить
 # каталог, пока он не станет пустым:
 #      # Удаляем все достижимое из каталога с именем "top",
 #      # при условии отсутствия символических ссылок.
 #      # ОСТОРОЖНО: Это опасно! Например, если top == '/', это
 #      # может удалить все ваши файлы на диске.
-# заменено на os.path.join:
-print('-----------------------------------------------------------')
+# Заменено на os.path.join:
 for root, dirs, files, rootfd in os.fwalk(".", topdown=False):
     for name in files:
         print('     name in files:', os.path.join(root, name))

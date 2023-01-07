@@ -92,9 +92,7 @@
 #     Новое в версии 3.5.
 #     Изменено в версии 3.6: Добавлена поддержка интерфейса PathLike.
 #     Добавлена поддержка байтовых путей в Windows.
-
 import os
-
 path = '..'
 t = 'unknown'
 for entry in os.scandir(path):
