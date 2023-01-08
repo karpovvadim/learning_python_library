@@ -45,10 +45,8 @@
 print('-----------os.stat-----------------------------------------------')
 import os
 path = 'remove.py'
-# Get the status of the specified path
-status = os.stat(path)
-# Print the status of the specified path
-print('remove.py:', status)
+status = os.stat(path)  # Get the status of the specified path
+print('remove.py:', status)  # Print the status of the specified path
 print("status.st_size:", status.st_size)
 print("status.st_mode:", status.st_mode)
 print('-----------os.lstat-----------------------------------------------')

@@ -1,6 +1,7 @@
 """os.major(device, /)"""
 # Извлеките основной номер устройства из необработанного номера устройства (обычно
 # это поле st_dev или st_rdev из stat).
+
 import os
 # Get the raw device number of a file (Получить необработанный номер устройства файла)
 device = os.stat("tt.txt").st_dev

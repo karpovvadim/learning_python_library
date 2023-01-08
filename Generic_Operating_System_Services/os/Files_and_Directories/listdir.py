@@ -27,14 +27,13 @@ dir_list = os.listdir(path)
 print("Files and directories in '", path, "' :")
 print(dir_list)
 
-print("-----список всех файлов и каталогов в указанном каталоге каталоге----")
-# Get the path of current working directory (Получить путь к текущему рабочему каталогу)
-path = os.getcwd()
+print("---------список всех файлов и каталогов в указанном каталоге------------")
+path = "/home/vadim/PycharmProjects/learning_python_library/"
 dir_list = os.listdir(path)
 print("Files and directories in '", path, "' :")
 print(dir_list)
 
-print("------список всех файлов и каталогов в текущем рабочем каталоге--------")
+print("--------список всех файлов и каталогов в текущем рабочем каталоге--------")
 # If we do not specify any path os.listdir() method will return the list of all
 # files and directories in current working directory
 # Если мы не укажем никакого пути, метод os.listdir() вернет список всех файлов

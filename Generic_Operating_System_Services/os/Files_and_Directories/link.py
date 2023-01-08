@@ -9,8 +9,7 @@
 #      Изменено в версии 3.6: принимает объект, подобный пути, для src и dst.
 import os
 src = 'tt.txt'
-# Destination file path  (Путь к файлу назначения)
-dst = 'tt_link.txt'
+dst = 'tt_link.txt'  # Destination file path  (Путь к файлу назначения)
 # Create a hard link pointing to src named dst using os.link() method
 # Создайте жесткую ссылку, указывающую на src с именем dst, используя метод os.link().
 os.link(src, dst)

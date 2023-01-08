@@ -1,25 +1,13 @@
 """os.getcwd()"""
 # Функция getcwd() модуля os вернет строку, представляющую текущий рабочий каталог
+
+"""os.getcwdb()"""
+# Возвращает строку байтов, представляющую текущий рабочий каталог.
+# Изменено в версии 3.8: функция теперь использует кодировку UTF-8 в Windows,
+# а не кодовую страницу ANSI: обоснование см. в PEP 529.
+# Эта функция больше не является устаревшей в Windows.
+
 import os
-import stat
-
 print(os.getcwd())
-
 # Функция getcwdb() вернет строку байтов, представляющую текущий рабочий каталог.
-
 print(os.getcwdb())
-print("----------для l(chmod).py----------------------------")
-f = 'l(chmod).py'
-st = os.stat(f).st_mode
-print(stat.filemode(st))
-os.chmod(f, 0o754)
-st = os.stat(f).st_mode
-print(stat.filemode(st))
-
-print("----------для chown.py---------------------------------------")
-f = 'chown.py'
-st = os.stat(f).st_mode
-print(stat.filemode(st))
-os.chmod(f, 0o754)
-st = os.stat(f).st_mode
-print(stat.filemode(st))

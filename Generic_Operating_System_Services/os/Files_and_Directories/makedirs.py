@@ -40,10 +40,9 @@ path = os.path.join(parent_dir, directory)
 try:
     os.makedirs(path, mode)
 except FileExistsError:
-    print("Directory '%s' created" % directory)
+    print("Directory '%s' created" % path)
 
 # 'Linux extended attributes', 'a', and 'b' will also be created if it does not exists
-
 # If any of the intermediate level directory is missing os.makedirs() method will
 # create them
 # Если какой-либо из каталогов промежуточного уровня отсутствует, метод os.makedirs()
@@ -51,6 +50,7 @@ except FileExistsError:
 
 # os.makedirs() method can be used to create a directory tree
 # Метод os.makedirs() можно использовать для создания дерева каталогов.
+
 print("-----------------------------------")
 # os.makedirs() method will raise an OSError if the directory to be created already
 # exists. But It can be suppressed by setting the value of a parameter exist_ok as True
