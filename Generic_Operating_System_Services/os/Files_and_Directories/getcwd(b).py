@@ -8,8 +8,8 @@ print(os.getcwd())
 # Функция getcwdb() вернет строку байтов, представляющую текущий рабочий каталог.
 
 print(os.getcwdb())
-print("----------для (l)chmod.py----------------------------")
-f = '(l)chmod.py'
+print("----------для l(chmod).py----------------------------")
+f = 'l(chmod).py'
 st = os.stat(f).st_mode
 print(stat.filemode(st))
 os.chmod(f, 0o754)
