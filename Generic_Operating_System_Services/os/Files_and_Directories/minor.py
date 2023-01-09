@@ -11,3 +11,9 @@ print("Raw device number:", device)  # необработанный номер �
 # второстепенный номер устройства из приведенного выше необработанного номера устройства).
 minor = os.minor(device)
 print("Device minor number:", minor)  # Второстепенный номер устройства
+
+print('-----------st_rdev-------------------------------')
+device = os.stat("/home").st_rdev
+print("Raw device number:", device)
+minor = os.minor(device)
+print("Device minor number:", minor)

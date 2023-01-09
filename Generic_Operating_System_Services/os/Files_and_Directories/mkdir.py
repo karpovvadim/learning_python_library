@@ -21,7 +21,7 @@ path = os.path.join(parent_dir, directory)  # Path
 
 # Create the directory 'Process_Management' in '/home/vadim/PycharmProjects/
 # learning_python_library/Generic_Operating_System_Services/os/'
-os.mkdir(path)
+#os.mkdir(path)
 print("Directory '%s' created" % directory)
 
 directory = "ihritik"  # Directory
@@ -31,9 +31,9 @@ mode = 0o666
 path = os.path.join(parent_dir, directory)
 # Create the directory "Process_Management" in '/home/vadim/PycharmProjects/
 # learning_python_library/Generic_Operating_System_Services/ os/' with mode 0o666
-os.mkdir(path, mode)
+#os.mkdir(path, mode)
 print("Directory '%s' created" % directory)
-
+print('---------------------------------------')
 # Ошибка обработки при использовании метода os.mkdir()
 path = "/home/vadim/PycharmProjects/learning_python_library/Generic_Operating_System_Services/os/ihritik"
 try:

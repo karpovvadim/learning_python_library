@@ -21,28 +21,22 @@ path = os.path.join(location, file)
 os.remove(path)
 print("%s has been removed successfully" % file)
 
-print("------------- If the specified path is a directory-------------")
-path = "/home/vadim/PycharmProjects/learning_python_library/" \
-           "Generic_Operating_System_Services/os/ihritik"
-
-#os.remove(path)
-print("% s has been removed successfully" % file)
-
-# if the specified path is a directory then 'IsADirectoryError' error will raised
-# если указанный путь – это каталог, возникнет ошибка "IsADirectoryError"
-# Точно так же, если указанный путь к файлу не существует или недействителен,
-# будет вызвана соответствующая ошибка OSError.
-
-# Similarly if the specified file path does not exists or is invalid then corresponding
-# OSError will be raised
-
 print("---------Handling error while using os.remove() method----------------")
 path = '/home/User/Documents/ihritik'
 
-# Remove the specified file path
 try:
     os.remove(path)
     print("% s removed successfully" % path)
 except OSError as error:
     print(error)
     print("File path can not be removed")
+
+print('----------------------------------------------')
+f = 'test_delete.txt'
+
+with open(f, 'w') as fp:
+    fp.write('data string')
+
+print(os.path.isfile(f))
+os.remove(f)
+print(os.path.isfile(f))

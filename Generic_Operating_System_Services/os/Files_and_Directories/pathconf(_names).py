@@ -21,6 +21,7 @@ print("Maximum length of a filename :%d" % no)
 no = os.pathconf('minor.py', 'PC_FILESIZEBITS')
 print("file size in bits  :%d" % no)
 
+print('-------------------------------------------------------')
 """os.pathconf_names"""
 # Словарное сопоставление имен, принимаемых pathconf() и fpathconf(), с целочисленными
 # значениями, определенными для этих имен операционной системой хоста. Это можно

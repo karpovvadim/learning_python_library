@@ -17,5 +17,11 @@ path = "./mypipe"
 mode = 0o600
 # Create a FIFO named path with the specified mode using os.mkfifo() method
 # Создайте именованный путь FIFO с указанным режимом, используя метод os.mkfifo()
-os.mkfifo(path, mode)
+try:
+    os.mkfifo(path, mode)
+except OSError as error:
+    print(error)
 print("FIFO named '% s' is created successfully." % path)
+print(os.path.exists('./mypipe'))
+
+

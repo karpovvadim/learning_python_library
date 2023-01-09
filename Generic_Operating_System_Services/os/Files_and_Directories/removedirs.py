@@ -8,9 +8,9 @@
 # не может быть успешно удален.
 #      Вызывает событие аудита os.remove с аргументами path, dir_fd.
 #      Изменено в версии 3.6: принимает объект, подобный пути.
+
 import os
 path = "./Linux_extended_attributes/a/b/c"
-
 os.makedirs(path, 0o774, exist_ok=True)
 print(os.path.isdir(path))
 os.removedirs(path)

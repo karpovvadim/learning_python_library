@@ -15,8 +15,8 @@ path = "filex.txt"
 per = 0o600  # Permission to use (Разрешение на использование)
 node_type = stat.S_IRUSR  # type of node to be created (тип создаваемого узла)
 mode = per | node_type
-# Create a file system node with specified permission and type using os.mknod() method
-# Создайте узел файловой системы с указанным разрешением и типом, используя
-# метод os.mknod()
-os.mknod(path, mode)
+try:
+    os.mknod(path, mode)
+except OSError as error:
+    print(error)
 print("Filesystem node is created successfully")
