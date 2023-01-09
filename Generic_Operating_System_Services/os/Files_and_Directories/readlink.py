@@ -24,13 +24,15 @@ path = "/home/vadim/PycharmProjects/learning_python_library/" \
 
 # Create a symbolic link of above path using os.symlink() method
 link = "tt_symbolic.txt"
-os.symlink(path, link)
+try:
+    os.symlink(path, link)
+except OSError as error:
+    print(error)
 # So, link is a symbolic link. Now using os.readlink() method resolve the symbolic link
 # Итак, ссылка является символической ссылкой. Теперь, используя метод os.readlink(),
 # разрешаем символическую ссылку.
 originalPath = os.readlink(link)
 print("Symbolic link points to", originalPath)  # Символическая ссылка указывает на
-
 
 # If the given path is not a symbolic link then os.readlink() method will
 # raise an OSError (Если данный путь не является символической ссылкой,

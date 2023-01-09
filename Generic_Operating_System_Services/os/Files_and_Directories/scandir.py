@@ -25,8 +25,8 @@ print("Files and Directories in '% s':" % path)
 for entry in obj:
     if entry.is_dir() or entry.is_file():
         print(entry.name)
-
 obj.close()
+
 print('--------------------------------------------------')
 # Итератор scandir() поддерживает протокол менеджера контекста и имеет следующий метод:
 """scandir.close()"""

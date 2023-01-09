@@ -20,6 +20,7 @@
 #      Вызывает событие аудита os.rename с аргументами src, dst, src_dir_fd, dst_dir_fd.
 #      Новое в версии 3.3: Аргументы src_dir_fd и dst_dir_fd.
 #      Изменено в версии 3.6: принимает объект  path-like object (подобный пути), для src и dst.
+
 import os
 src_dir, dst_dir = 'test_dir', 'rename_dir'
 os.mkdir(src_dir, 0o774)
@@ -28,6 +29,7 @@ os.rename(src_dir, dst_dir)
 print('src_dir:', os.path.isdir(src_dir), ' dst_dir:', os.path.isdir(dst_dir))
 os.rmdir(dst_dir)
 print('src_dir:', os.path.isdir(src_dir), ' dst_dir:', os.path.isdir(dst_dir))
+
 print('-----------------------------------------------------')
 src_f, dst_f = 'test_file.txt', 'rename_file.txt'
 fp = open(src_f, 'w')

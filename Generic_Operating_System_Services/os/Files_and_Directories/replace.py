@@ -17,6 +17,7 @@ os.replace(scr_dir, dst_dir)
 print('scr_dir:', os.path.isdir(scr_dir), ' dst_dir:', os.path.isdir(dst_dir))
 os.rmdir(dst_dir)
 print('scr_dir:', os.path.isdir(scr_dir), ' dst_dir:', os.path.isdir(dst_dir))
+
 print('---------------------------------------------------------------------')
 scr_f, dst_f = 'test_file.txt', 'rename_file.txt'
 fp = open(scr_f, 'w')

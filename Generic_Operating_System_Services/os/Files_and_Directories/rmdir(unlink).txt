@@ -23,6 +23,7 @@ FileNotFoundError.
    Новое в версии 3.3: Параметр dir_fd.
 Изменено в версии 3.6: принимает объект  path-like object (подобный пути)
 
+
 Примеры смотреть в replace.py, rename.py:
     os.replace(src, dst, *, src_dir_fd=None, dst_dir_fd=None)
     os.rename(src, dst, *, src_dir_fd=None, dst_dir_fd=None)

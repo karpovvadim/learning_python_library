@@ -27,6 +27,7 @@
 #      и ST_RELATIME.
 #      Изменено в версии 3.6: принимает объект, подобный пути.
 #      Новое в версии 3.7: Добавлен f_fsid.
+
 import os
 path = 'remove.py'
 info = os.statvfs(path)

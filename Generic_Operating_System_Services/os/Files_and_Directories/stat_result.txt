@@ -36,7 +36,6 @@ st_size
     без завершающего нулевого байта.
 
 Timestamps:
-
 st_atime
     Время последнего доступа, выраженное в секундах.
     Time of most recent access expressed in seconds.
@@ -46,7 +45,6 @@ st_mtime
     Time of most recent content modification expressed in seconds.
 
 st_ctime
-
     Platform dependent (Зависит от платформы):
         время последнего изменения метаданных в Unix,
         the time of most recent metadata change on Unix,
@@ -67,8 +65,7 @@ st_ctime_ns
         время последнего изменения метаданных в Unix,
         время создания в Windows, выраженное в наносекундах как целое число.
 
-Примечание
-
+    Примечание
 Точное значение и разрешение атрибутов st_atime, st_mtime и st_ctime зависят от
 операционной системы и файловой системы. Например, в системах Windows, использующих
 файловые системы FAT или FAT32, st_mtime имеет разрешение 2 секунды, а
@@ -83,7 +80,6 @@ st_atime — только 1 день. Для получения подробно
 st_atime_ns, st_mtime_ns и st_ctime_ns.
 
 В некоторых системах Unix (например, Linux) также могут быть доступны следующие атрибуты:
-
 st_blocks
     Количество 512-байтовых блоков, выделенных для файла. Это может быть меньше, чем
     st_size/512, если в файле есть дыры.
@@ -104,7 +100,6 @@ st_flags
 В других системах Unix (таких, как FreeBSD) могут быть доступны следующие атрибуты
 (но они могут быть заполнены только в том случае, если пользователь root пытается их
 использовать):
-
 st_gen
     Номер генерации файла.
     File generation number.
@@ -114,12 +109,10 @@ st_birthtime
     Time of file creation.
 
 В Solaris и его производных также могут быть доступны следующие атрибуты:
-
 st_fstype
     Строка, однозначно идентифицирующая тип файловой системы, содержащей файл.
 
 On macOS systems, the following attributes may also be available:
-
 st_rsize
     Реальный размер файла.
     Real size of the file.
@@ -133,7 +126,6 @@ st_type
     File type.
 
 В системах Windows также доступны следующие атрибуты:
-
 st_file_attributes
      Атрибуты файлов Windows: член dwFileAttributes структуры BY_HANDLE_FILE_INFORMATION,
      возвращаемой функцией GetFileInformationByHandle(). См. константы FILE_ATTRIBUTE_* в

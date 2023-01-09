@@ -13,7 +13,7 @@ import os
 old = 'a/b/c/old'
 new = 'foo/bar/baz/new'
 os.makedirs(old, 0o774)
-print('old:', os.path.isdir(old), '  new:', os.path.isdir(new))
+print('old:', os.path.isdir(old), '   new:', os.path.isdir(new))
 os.renames(old, new)
 print('old:', os.path.isdir(old), '  new:', os.path.isdir(new))
 os.removedirs(new)

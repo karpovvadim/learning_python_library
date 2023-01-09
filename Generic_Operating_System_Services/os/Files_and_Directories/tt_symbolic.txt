@@ -1,0 +1,1 @@
+/home/vadim/PycharmProjects/learning_python_library/Generic_Operating_System_Services/os/Files_and_Directories/tt.txt
