@@ -37,11 +37,12 @@
 
 import os
 # semaphore with start value '1' (семафор с начальным значением '1')
-fd = os.eventfd(1, os.EFD_SEMAPHORE | os.EFC_CLOEXEC)
+fd = os.eventfd(1, os.EFD_SEMAPHORE | os.EFD_CLOEXEC)
 
 
 def do_work():
-    pass
+    print(type(fd), "fd =", fd)
+    print(type(v), "v =", v)
 
 
 try:

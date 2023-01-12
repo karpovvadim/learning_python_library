@@ -5,6 +5,23 @@
 # помощью signal.signal().
 
 import os
+import signal
+pid = os.fork()  # Создайте дочерний процесс, используя метод os.fork()
+if pid > 0:
+    print("\nIn Parent process")
+    info = os.wait()
+    print("info:", info)
+    sig = os.WTERMSIG(info[1])
+    print("Child exited due to signal no:", sig)  # Ребенок вышел из-за сигнала №: 6
+    print("Signal name:", signal.Signals(sig).name)
+else:
+    print("In child process")
+    print("Process ID:", os.getpid())
+    print("Hello World!")
+
+    os.abort()
+
+print('-----------------------------------------------------------')
 print("Hello World!")
 os.abort()
 print("This will not be printed")
