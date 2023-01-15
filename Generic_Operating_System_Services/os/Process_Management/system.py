@@ -29,8 +29,6 @@ cmd = '/bin/ls -l /home/vadim/PycharmProjects/learning_python_library/Generic_Op
 output = run(cmd.split(), stdout=PIPE, stderr=STDOUT, text=True)
 print(output)
 
-# указывайте полный путь к запускаемой
-# программе/команде или она не будет работать
 cmd = "/home/vadim/PycharmProjects/learning_python_library"
 code_exit = os.system(cmd)
 print('----------------------------------------------------------------------')
