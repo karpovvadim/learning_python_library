@@ -19,7 +19,7 @@
 # Новое в версии 3.10.
 
 # flags:
-"""os.MFD_CLOEXEC"""  # закрыть при выполнении
+"""os.EFD_CLOEXEC"""  # закрыть при выполнении
 #      Установите флаг close-on-exec для нового файлового дескриптора eventfd().
 #      Доступность: Linux >= 2.6.27
 #      Новое в версии 3.10.
@@ -36,13 +36,15 @@
 #      Новое в версии 3.10.
 
 import os
+
 # semaphore with start value '1' (семафор с начальным значением '1')
-fd = os.eventfd(1, os.EFD_SEMAPHORE | os.EFD_CLOEXEC)
+fd = os.eventfd(1, os.EFD_SEMAPHORE)
 
 
 def do_work():
-    print(type(fd), "fd =", fd)
-    print(type(v), "v =", v)
+    print("fd =", fd)
+    print("v =", v)
+    print(os.listxattr(path=os.getcwd()))
 
 
 try:

@@ -41,8 +41,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Process_Management" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.eventfd">
-    <configuration name="eventfd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.eventfd(_r,_w)">
+    <configuration name="eventfd(_r,_w)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Files_and_Directories" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -54,7 +54,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eventfd.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eventfd(_r,_w).py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,7 +149,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.eventfd" />
+        <item itemvalue="Python.eventfd(_r,_w)" />
         <item itemvalue="Python.memfd_create" />
         <item itemvalue="Python.lseek" />
         <item itemvalue="Python.rename" />

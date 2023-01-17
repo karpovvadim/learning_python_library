@@ -14,10 +14,11 @@
 # waitpid() — единственная функция, доступная в Windows.
 import os
 pid = os.fork()
+print("     pid =", pid)
 if pid:
     print("1_Process ID:", os.getpid())
     status = os.wait()
-    print("\nstatus:", status)
+    print("\nstatus:       ", status)
     print("\nIn parent process-")
     print("2_Process ID:", os.getpid())
     print("Terminated child's process id:", status[0])
@@ -25,7 +26,7 @@ if pid:
 else:
     print("In Child process-")
     print("3_Process ID:", os.getpid())
-    print("Hello ! Geeks")
+    print("Hello World!")
     print("Exiting")
 
 # с помощью метода os.wait() Родительский процесс будет ждать завершения дочернего

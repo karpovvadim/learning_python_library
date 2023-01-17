@@ -30,31 +30,14 @@ import os
 import sys
 import time
 
-pid = os.fork()
-if pid:
-    p_id = pid
-    print("w_id =", pid)
-    option_1 = os.WUNTRACED  # Specify option (Укажите вариант)
-    option_2 = os.WCONTINUED
-    print("option =", option_1)
-    status = os.waitpid(p_id, option_2)
-    print('++++++++++++++++++++++++++++++++++')
-    print("Status of child process:", status)
-else:
-    print("In Child process-")
-    print("Process ID:", os.getpid())
-    print("Hello ! Geeks")
-    print("Exiting..")
-
-time.sleep(3)
-print('------------------------------------------------------------------')
 workers = []
 for i in range(2):
-    print(f'PARENT {os.getpid()}: Forking {i}')
-    worker_pid = os.fork()
-    if not worker_pid:
+    print(f'PARENT {os.getpid()}: Forking {i}')  # Разветвление
+    worker_pid = os.fork()  # идентификатор дочернего процесса в родительском
+    print("    worker_pid =", worker_pid)
+    if not worker_pid:  # рабочий идентификатор
         print(f'WORKER {i}: Starting')
-        time.sleep(2 + i)
+        time.sleep(1 + i)
         print(f'WORKER {i}: Finishing')
         sys.exit(i)
     workers.append(worker_pid)
@@ -63,3 +46,21 @@ for pid in workers:
     print(f'PARENT: Waiting for {pid}')
     done = os.waitpid(pid, 0)
     print(f'PARENT: Child done: {done}')
+
+"""os.WCONTINUED"""
+# Этот флаг опций для waitpid(), wait3(), wait4() и waitid() вызывает сообщение о дочерних
+# процессах, если они были продолжены с момента остановки управления заданиями с
+# момента последнего сообщения о них.
+#       Доступность: Unix, не Emscripten, не WASI.
+
+"""os.WUNTRACED"""
+# Этот флаг опций для waitpid(), wait3() и wait4() приводит к тому, что дочерние процессы
+# также сообщаются, если они были остановлены, но их текущее состояние не сообщается с тех
+# пор, как они были остановлены.
+#      Эта опция недоступна для waitid().
+#      Доступность: Unix, не Emscripten, не WASI.
+
+"""os.WNOHANG"""
+# Этот флаг параметров приводит к немедленному возврату функций waitpid(), wait3(),
+# wait4() и waitid(), если статус дочернего процесса недоступен.
+#       Доступность: Unix, не Emscripten, не WASI.
