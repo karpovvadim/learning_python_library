@@ -29,7 +29,7 @@ return "some default data"
 # is better written as: (лучше записать так:)
 
 try:
-    fp = open("1_overview.txt")
+    fp = open("README.md")
 except PermissionError:
     return "some default data"
 else:

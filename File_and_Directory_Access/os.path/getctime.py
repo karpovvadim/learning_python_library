@@ -7,8 +7,8 @@
 # Изменено в версии 3.6: принимает объект, подобный пути.
 import os.path
 import time
-print(os.path.getctime('/home/vadim/python_library/File_and_Directory_Access/os.path/note.txt'))
-ctime = os.path.getctime('/home/vadim/python_library/File_and_Directory_Access/os.path/note.txt')
+print(os.path.getctime('/home/vadim/python_library/File_and_Directory_Access/os.path/README.md'))
+ctime = os.path.getctime('/home/vadim/python_library/File_and_Directory_Access/os.path/README.md')
 print(time.ctime(ctime))
 ctime = os.path.getctime('/home/vadim/python_library/File_and_Directory_Access/os.path/getatime.py')
 print(time.ctime(ctime))
