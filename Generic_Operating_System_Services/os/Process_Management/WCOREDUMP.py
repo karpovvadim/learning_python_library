@@ -14,7 +14,7 @@ else:
     print("In Child process")
     print("Process ID:", os.getpid())
     print("Hello World!")
-    # Метод os.abort() будет генерировать сигнал SIGABRT для текущего процесса.
+    # Метод os.abort() будет генерировать сигнал SIGABRT для текущего процесса и создаст дамп ядра.
     os.abort()
 
 print("\n----------------------------------------------------------")
@@ -44,4 +44,5 @@ else:
     print("In first child process")
     print("Process ID:", os.getpid())
     print("Hello World!")
+    # Метод os.abort() сгенерирует сигнал SIGABRT для текущего процесса и создаст дамп ядра.
     os.abort()
