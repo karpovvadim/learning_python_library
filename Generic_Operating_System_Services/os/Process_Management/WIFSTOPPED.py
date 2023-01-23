@@ -17,7 +17,7 @@ if pid:
     # Проверьте, был ли остановлен дочерний процесс с помощью метода os.WIFSTOPPED().
     isStopped = os.WIFSTOPPED(info[1])
     print("Has child process been stopped? -", isStopped)  # Дочерний процесс был остановлен?
-else :
+else:
     print("In Child process")
     print("Process ID:", os.getpid())
     print("Hello World!")

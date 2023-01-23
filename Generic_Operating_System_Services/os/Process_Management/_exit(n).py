@@ -14,21 +14,21 @@ import os
 
 pid = os.fork()  # Создайте дочерний процесс, используя метод os.fork()
 if pid > 0:  # pid больше 0 указывает на родительский процесс
-    print("\nIn parent process")
-    info = os.waitpid(pid, 0)  # Дождитесь завершения дочернего процесса и получите
-    # его pid и индикацию статуса выхода с помощью метода os.wait().
-    print("info:", info)
     # Метод os.waitpid() возвращает первый атрибут кортежа, представляющий дочерний pid,
     # а второй представляет индикацию статуса выхода.
+    info = os.waitpid(pid, 0)  # Дождитесь завершения дочернего процесса и получите
+    # его pid и индикацию статуса выхода с помощью метода os.wait().
+    print("\nIn parent process")
+    print("info:", info)
     # Получите код выхода, используемый дочерним процессом в методе os._exit()
     # сначала проверьте, является ли os.WIFEXITED() истинным или нет
     if os.WIFEXITED(info[1]):
         code = os.WEXITSTATUS(info[1])
         print("Child's exit code:", code)
 else:
-    print("In child process")
+    print("\nIn child process")
     print("Process ID:", os.getpid())
-    print("Hello ! Geeks")
+    print("Hello World!")
     print("Child exiting..")
     os._exit(os.EX_OK)  # Выйти со статусом os.EX_OK, используя метод os._exit()
     # Значение os.EX_OK равно 0
