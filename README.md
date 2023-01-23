@@ -390,4 +390,4 @@ Superseded Modules                      Замененные модули
     uu — Encode and decode uuencode files                   — кодировать и декодировать файлы uuencode
     xdrlib — Encode and decode XDR data                     — кодирует и декодирует данные XDR
 
-Security Considerations                 Вопросы безопасности
+Security Considerations                Вопросы безопасности
