@@ -5,14 +5,16 @@
 import os
 pid = os.fork()  # Create a child process using os.fork() method
 if pid:
-    info = os.wait()
-    print("\nIn parent process")
+    info = os.wait()  # Дождитесь завершения дочернего процесса и получить его pid и статус выхода
+    print("\ninfo", info)
+    print("In parent process")
     core_dump = os.WCOREDUMP(info[1])  # Check if core dump was generated for the child process
-    print("Was core dump generated? =", core_dump)
+    print("Was core dump generated? -", core_dump)
 else:
     print("In Child process")
     print("Process ID:", os.getpid())
     print("Hello World!")
+    # Метод os.abort() будет генерировать сигнал SIGABRT для текущего процесса.
     os.abort()
 
 print("\n----------------------------------------------------------")
@@ -30,16 +32,16 @@ if pid:
         # представляет идентификатор ребенка child_info[1] представляет выходную статистику
         print("\nIn parent process")
         core_dump = os.WCOREDUMP(child1_info[1])
-        print("Was core dump generated for first child process? =", core_dump)
+        print("Was core dump generated for first child process? -", core_dump)
         core_dump = os.WCOREDUMP(child2_info[1])
-        print("\nWas core dump generated for second child process? = ", core_dump)
+        print("\nWas core dump generated for second child process? - ", core_dump)
     else:
         print("\nIn second child process")
         print("Process id:", os.getpid())
         print("Hey ! there")
         print("Exiting")
 else:
-    print("In Child process")
+    print("In first child process")
     print("Process ID:", os.getpid())
     print("Hello World!")
     os.abort()
