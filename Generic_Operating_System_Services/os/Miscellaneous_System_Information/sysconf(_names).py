@@ -35,7 +35,7 @@ print("% s :" % name2, value2)
 conf_var = "SC_INT_MIN"
 name = os.sysconf_names[conf_var]
 print("\nInteger value corresponding to % s:" % conf_var, name)
-# Целочисленное значение, соответствующее conf_var, name
+# Целочисленное значение, соответствующее conf_var и name метода os.sysconf_names
 
 value = os.sysconf(name)
 print("Configuration value corresponding to % s :" % name, value)

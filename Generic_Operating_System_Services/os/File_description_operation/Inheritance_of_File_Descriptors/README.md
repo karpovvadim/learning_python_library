@@ -1,4 +1,5 @@
-        Inheritance of File Descriptors (Наследование файловых дескрипторов)
+        Inheritance of File Descriptors 
+        Наследование файловых дескрипторов
 
 New in version 3.4.
 
@@ -19,3 +20,11 @@ stdout и stderr), которые всегда наследуются. При и
 
 На платформах WebAssembly wasm32-emscripten и wasm32-wasi дескриптор файла не может
 быть изменен.
+
+"""os.get_handle_inheritable(handle)"""
+# Получите «наследуемый» флаг указанного дескриптора (логическое значение).
+#       Доступность: Windows.
+
+"""os.set_handle_inheritable(handle, inheritable)"""
+# Установите «наследуемый» флаг указанного дескриптора.
+#      Доступность: Windows.
