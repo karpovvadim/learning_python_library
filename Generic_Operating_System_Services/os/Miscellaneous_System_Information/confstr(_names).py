@@ -10,6 +10,13 @@
 # не поддерживается хост-системой, даже если оно включено в confstr_names,
 # вызывается OSError с errno.EINVAL в качестве номера ошибки.
 #   Доступность: Unix.
+
+""" os.confstr_names"""
+# Имена сопоставления словаря, принятые confstr(), с целочисленными значениями,
+# определенными для этих имён операционной системой хоста. Это можно использовать для
+# определения набора имен, известных системе.
+#      Доступность: Unix.
+
 import os
 # System Configuration variable (Переменная конфигурации системы)
 name = "CS_GNU_LIBC_VERSION"
@@ -31,3 +38,9 @@ print("\nInteger value corresponding to % s:" % conf_var, name)
 
 value = os.confstr(name)
 print("Configuration value corresponding to % s :" % name, value)
+
+print("\nИмена, известные операционной системе, принятые confstr(), \
+с целочисленными значениями")
+for item in os.confstr_names.items():
+    print(item)
+
