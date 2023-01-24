@@ -13,14 +13,28 @@ priority_min = os.sched_get_priority_min(os.SCHED_FIFO)
 print("First In First Out scheduling policy:", priority_min)  # Политика планирования
 # «первым пришел – первым обслужен»
 
+# Получите минимальное значение приоритета для политики циклического планирования.
+# Константа os.SCHED_RR представляет политику циклического планирования.
 priority_min = os.sched_get_priority_min(os.SCHED_RR)
-print("Round-robin scheduling policy:", priority_min)
+print("Round-robin scheduling policy:", priority_min)  # Политика циклического планирования
 
+# Получите минимальное значение приоритета для политики планирования по умолчанию.
+# Константа os.SCHED_OTHER представляет политику планирования по умолчанию.
 priority_min = os.sched_get_priority_min(os.SCHED_OTHER)
-print("Default scheduling policy:", priority_min)
+print("Default scheduling policy:", priority_min)  # Политика планирования по умолчанию
 
+# Получите минимальное значение приоритета для политики планирования для фоновых задач
+# с чрезвычайно низким приоритетом. Константа os.SCHED_IDLE представляет политику
+# планирования для фоновых задач с чрезвычайно низким приоритетом.
 priority_min = os.sched_get_priority_min(os.SCHED_IDLE)
 print("Scheduling policy for extremely low priority background tasks:", priority_min)
+# политика планирования для фоновых задач с чрезвычайно низким приоритетом
 
+# Получите минимальное значение приоритета для политики планирования для процессов с
+# интенсивным использованием ЦП, который  пытается сохранить интерактивность на остальной
+# части компьютера.
+# Константа os.SCHED_BATCH представляет политику планирования процессов, интенсивно
+# использующих ЦП, который пытается сохранить интерактивность на остальной части компьютера.
 priority_min = os.sched_get_priority_min(os.SCHED_BATCH)
-print("Scheduling policy for CPU-intensive processes:", priority_min)
+print("Scheduling policy for CPU-intensive processes:", priority_min)  # Политика
+# планирования для процессов с интенсивным использованием ЦП
