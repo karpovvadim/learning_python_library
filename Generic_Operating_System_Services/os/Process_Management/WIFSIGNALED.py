@@ -3,21 +3,21 @@
 #      Доступность: Unix, не Emscripten, не WASI.
 import os
 import signal
-#
-# pid = os.fork()  # Create a child process using os.fork() method
-# if pid:
-#     info = os.wait()  # Дождитесь завершения дочернего процесса и получить его pid и статус выхода
-#     print("\ninfo =", info)
-#     print("In parent process")
-#     signaled = os.WIFSIGNALED(info[1])  # Check whether the child process exited due to a signal
-#     print("Child process exited due a signal? -", signaled)  # Дочерний процесс завершился
-#     # из-за сигнала?
-# else:
-#     print("In Child process")
-#     print("Process ID:", os.getpid())
-#     print("Hello World!")
-#     # Метод os.abort() будет генерировать сигнал SIGABRT для текущего процесса.
-#     os.abort()
+
+pid = os.fork()  # Create a child process using os.fork() method
+if pid:
+    info = os.wait()  # Дождитесь завершения дочернего процесса и получить его pid и статус выхода
+    print("\ninfo =", info)
+    print("In parent process")
+    signaled = os.WIFSIGNALED(info[1])  # Check whether the child process exited due to a signal
+    print("Child process exited due a signal? -", signaled)  # Дочерний процесс завершился
+    # из-за сигнала?
+else:
+    print("In Child process")
+    print("Process ID:", os.getpid())
+    print("Hello World!")
+    # Метод os.abort() будет генерировать сигнал SIGABRT для текущего процесса
+    os.abort()    # и создаст дамп ядра.
 
 print("\n----------------------------------------------------------")
 
