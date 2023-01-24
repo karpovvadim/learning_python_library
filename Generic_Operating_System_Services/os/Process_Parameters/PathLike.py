@@ -6,8 +6,6 @@
 # Возвращает представление пути файловой системы к объекту.
 # Метод должен возвращать только объект str или bytes, предпочтение отдается str.
 import os
-
-
 class My_Path(os.PathLike):
     def __fspath__(self):
         path_1 = "/home/vadim/python_library/os/fspath.py"

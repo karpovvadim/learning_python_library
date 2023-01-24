@@ -1,10 +1,4 @@
-            # Параметры процесса (Process Parameters)
-import errno
-import os
-import unittest
-from unittest import TestCase
-
-"""os.getpriority(which, who)"""  # Process Parameters
+"""os.getpriority(which, who)"""
 # Получить приоритет планирования программы. Аргумент which является одним из
 # os.PRIO_PROCESS, os.PRIO_PGRP или os.PRIO_USER и аргумент who интерпретируется
 # относительно which. Нулевое значение для who обозначает (соответственно) вызывающий
@@ -26,6 +20,18 @@ from unittest import TestCase
 # значение в диапазоне от -20 до 19. Приоритет по умолчанию - 0, более низкие приоритеты
 # вызывают более благоприятное планирование.
 
+import errno
+import os
+import unittest
+from unittest import TestCase
+
+base = os.getpriority(os.PRIO_PROCESS, os.getpid())
+print("priority:", base)
+
+pid = os.getpid()
+os.setpriority(os.PRIO_PROCESS, pid, 10)
+base = os.getpriority(os.PRIO_PROCESS, os.getpid())
+print("\npriority:", base)
 
 def test_set_get_priority(self):
     base = os.getpriority(os.PRIO_PROCESS, os.getpid())

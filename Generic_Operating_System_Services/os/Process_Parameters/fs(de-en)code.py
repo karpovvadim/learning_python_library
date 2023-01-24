@@ -1,12 +1,10 @@
-""" os.fsencode(filename)"""    # Process Parameters
+""" os.fsencode(filename)"""  # Process Parameters
 # Кодировать имя файла, похожее на путь, в кодировку файловой системы и обработчик
 # ошибок; вернуть байты без изменений.
 # fsdecode() — обратная функция.
 #       Новое в версии 3.2.
 # Изменено в версии 3.6: добавлена поддержка для приема объектов, реализующих
 # интерфейс os.PathLike.
-import os
-print(os.fsencode('os/listdir.py'))
 
 """ os.fsdecode(filename)"""
 # Декодировать похожее на путь имя файла из кодировки файловой системы и обработчика
@@ -15,5 +13,6 @@ print(os.fsencode('os/listdir.py'))
 #       Новое в версии 3.2.
 # Изменено в версии 3.6: добавлена поддержка для приема объектов, реализующих
 # интерфейс os.PathLike.
-print(os.fsdecode(b'listdir.py'))
-
+import os
+print("os.fsencode :", os.fsencode('os/listdir.py'))  # кодировать
+print("\nos.fsdecode :", os.fsdecode(b'listdir.py'))  # декодировать

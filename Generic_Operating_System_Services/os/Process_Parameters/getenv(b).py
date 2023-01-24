@@ -1,6 +1,6 @@
-""" os.getenv(key, default=None)"""   # Параметры процесса   Process Parameters
+""" os.getenv(key, default=None)"""
 # Возвращает значение ключа переменной среды в виде строки, если она существует,
-# или по умолчанию, если ее нет. ключ представляет собой строку. Обратите внимание,
+# или по умолчанию, если ее нет. key представляет собой строку. Обратите внимание,
 # что поскольку getenv() использует os.environ, сопоставление getenv() также
 # фиксируется при импорте, и функция может не отражать будущие изменения среды.
 # В Unix ключи и значения декодируются с помощью sys.getfilesystemencoding() и
@@ -20,5 +20,5 @@ print(os.getenv('TEST_ENV', '/tmp'))
 # Функция os.getenvb() доступна только в том случае, если os.support_bytes_environ
 # равно True.
 # Доступность: большинство Unix.
-print(os.getenvb(b'HOME'))
-print(os.getenvb(b'TEST_ENV', b'/tmp'))
+print("\nos.getenvb :", os.getenvb(b'HOME'))
+print("os.getenvb :", os.getenvb(b'TEST_ENV', b'/tmp'))
