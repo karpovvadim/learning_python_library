@@ -15,7 +15,6 @@ def hash_fraction(m, n):
      Эквивалентно hash(fractions.Fraction(m, n))).
     """
     P = sys.hash_info.modulus
-
     # Remove common factors of P.  (Unnecessary if m and n already coprime.)
     # Удалите общие делители P. (Необязательно, если m и n уже взаимно просты.)
     while m % P == n % P == 0:
@@ -65,6 +64,6 @@ def hash_complex(z):
 
 
 print("\nhash_fraction(4, 3) =", hash_fraction(4, 3))
-print("\nhash_float(1.23) =", hash_float(1.23))
+print("\nhash_float(1.23) =", hash_float(1.25))
 print("\nhash_complex(complex(1.5, 1)) =", hash_complex(complex(1.5, 1)))
 

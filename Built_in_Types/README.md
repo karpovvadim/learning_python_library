@@ -92,3 +92,39 @@ x>=y   вызывает   x.__ge__(y)
 объектам и никогда не вызывать исключения.
 Еще две операции с одинаковым синтаксическим приоритетом, in и not in, поддерживаются 
 типами, которые являются итерируемыми или реализуют метод __contains__().
+
+            Numeric Types — int, float, complex                     
+            Числовые типы — int, float, комплекс
+
+            Iterator Types                                          
+            Типы итераторов
+
+            Sequence Types — list, tuple, range                     
+            Типы последовательностей — список, кортеж, диапазон
+
+            Text Sequence Type — str                                
+            Тип текстовой последовательности — str
+
+            Binary Sequence Types — bytes, bytearray, memoryview    
+            Типы двоичных последовательностей — bytes, bytearray, memoryview
+
+            Set Types — set, frozenset                              
+            Типы наборов — набор, замороженный набор
+
+            Mapping Types — dict                                    
+            Типы сопоставления — dict
+
+            Context Manager Types                                   
+            Типы диспетчера контекста
+
+            Type Annotation Types — Generic Alias, Union            
+            Type Типы аннотаций — общий псевдоним, объединение
+
+            Other Built-in Types                                    
+            Другие встроенные типы
+
+            Special Attributes                                      
+            Специальные атрибуты
+
+            Integer string conversion length limitation             
+            Ограничение длины преобразования целочисленной строки
