@@ -101,3 +101,4 @@ x = 3
 print("\ns[i:j].index(x) =", s[i:j].index(x))
 print("s[i:j] =", s[i:j])
 print("s.count(2) =", s[i:j].count(2))
+
