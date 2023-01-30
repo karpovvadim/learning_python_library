@@ -12,6 +12,7 @@ string = "PYTHON IS AWESOME"
 print("Lowercase string:", string.casefold())
 firstString = "DER Fluß"
 secondString = "der Fluss"
+print(secondString.casefold(), '==', firstString.casefold())
 
 if firstString.casefold() == secondString.casefold():
     print('The strings are equal.')
