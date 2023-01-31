@@ -23,23 +23,23 @@
  str.isdigit()                   Состоит ли строка из цифр
  str.isidentifier()              True, если строка допустимый идентификатор
  str.islower()   	             Состоит ли строка из символов в нижнем регистре
- str.isnumeric()
- str.isprintable()
- str.isspace()
- str.istitle()
- str.isupper()
- str.join(iterable)
- str.ljust(width[, fillchar])
- str.lower()
- str.lstrip([chars])
- static str.maketrans(x[, y[, z]])
+ str.isnumeric()                 True, если все символы цифры 
+ str.isprintable()  True, если все символы в строке доступны для печати или строка пуста
+ str.isspace()      True, если в строке есть только пробелы и есть хотя бы один символ
+ str.istitle()      Начинаются ли слова в строке с заглавной буквы.
+ str.isupper()                   Состоит ли строка из символов в верхнем регистре
+ str.join(iterable)      Возвращает строку, которая в итерации соединиться c разделителем
+ str.ljust(width[, fillchar])  Возвращает строку, выровненную по левому краю [заполнить]
+ str.lower()                   все символы преобразованы в нижний регистр.
+ str.lstrip([chars])           копия строки с удалёнными ведущими символами [символы]
+ static str.maketrans(x[, y[, z]])  возвращает таблицу перевода, для str.translate().
  str.partition(sep)
  str.removeprefix(prefix, /)
  str.removesuffix(suffix, /)
  str.replace(old, new[, count])
  str.rfind(sub[, start[, end]])      Возвращает самый высокий индекс в строке
  str.rindex(sub[, start[, end]])
- str.rjust(width[, fillchar])
+ str.rjust(width[, fillchar])        Возвращает строку, выровненную по правому краю
  str.rpartition(sep)
  str.rsplit(sep=None, maxsplit=- 1)
  str.rstrip([chars])
