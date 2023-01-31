@@ -11,13 +11,13 @@
 
 print("---------static str.maketrans(x)----сделать перевод---------------")
 dict_ = {"a": "123", "b": "456", "c": "789"}  # example dictionary
-string = "abc"
+string = "123"
 print(string.maketrans(dict_))
 
 print("\n---------static str.maketrans(x[, y])----сделать перевод---------------")
 firstString = "abc"
 secondString = "def"
-string = "abc"
+string = "123"
 print(string.maketrans(firstString, secondString))
 
 firstString = "abc"
@@ -27,8 +27,8 @@ string = "abc"
 # arguments must have equal length
 
 print("\n---------static str.maketrans(x[, y[, z]])-----сделать перевод--------------")
-firstString_ = "abc"
-secondString_ = "def"
-thirdString = 'wraf'
+firstString_ = "abc"   # (97), 98, 99
+secondString_ = "def"  # (100), 101, 102
+thirdString_ = 'wraf'  # 119:None, 114:None, 97:None, 102:None
 string_ = "def"
-print(string_.maketrans(firstString_, secondString_, thirdString))
+print(string_.maketrans(firstString_, secondString_, thirdString_))

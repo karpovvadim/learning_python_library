@@ -33,17 +33,17 @@
  str.lower()                   все символы преобразованы в нижний регистр.
  str.lstrip([chars])           копия строки с удалёнными ведущими символами [символы]
  static str.maketrans(x[, y[, z]])  возвращает таблицу перевода, для str.translate().
- str.partition(sep)
- str.removeprefix(prefix, /)
- str.removesuffix(suffix, /)
- str.replace(old, new[, count])
- str.rfind(sub[, start[, end]])      Возвращает самый высокий индекс в строке
+ str.partition(sep)      Возвращает до разделителя, разделитель и после разделителя.
+ str.removeprefix(prefix, /)        удалить prefix. возвращает string[len(prefix):]
+ str.removesuffix(suffix, /)        удалить суффикс. вернуть string[:-len(suffix)]
+ str.replace(old, new[, count])     заменена старой подстроки новой
+ str.rfind(sub[, start[, end]])     Возвращает самый высокий индекс в строке
  str.rindex(sub[, start[, end]])
- str.rjust(width[, fillchar])        Возвращает строку, выровненную по правому краю
+ str.rjust(width[, fillchar])       Возвращает строку, выровненную по правому краю
  str.rpartition(sep)
  str.rsplit(sep=None, maxsplit=- 1)
- str.rstrip([chars])
- str.split(sep=None, maxsplit=- 1)
+ str.rstrip([chars])                копию строки с удаленными завершающими символами
+ str.split(sep=None, maxsplit=- 1)  распадается. Возвращает список слов в строке
  str.splitlines(keepends=False)
  str.startswith(prefix[, start[, end]])
  str.strip([chars])
