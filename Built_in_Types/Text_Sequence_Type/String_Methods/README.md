@@ -10,7 +10,7 @@
  str.center(width[, fillchar])     Возврат по центру
  str.count(sub[, start[, end]])    Количество непересекающихся вхождений подстроки sub
  str.encode(encoding='utf-8', errors='strict')    Кодирует строку в bytes, по умолчанию — «utf-8»
- str.endswith(suffix[, start[, end]])  Возвращает True, если строка заканчивается указанным суффиксом
+ str.endswith(suffix[, start[, end]])  Возвращает True, если строка заканчивается suffix
  str.expandtabs(tabsize=8)             Cимволы табуляции заменены одним или несколькими пробелами
  str.find(sub[, start[, end]])         Возвращает наименьший индекс в строке
  str.format(*args, **kwargs)       Содержит поля замены, разделённые фигурными скобками {}.
@@ -38,20 +38,20 @@
  str.removesuffix(suffix, /)        удалить суффикс. вернуть string[:-len(suffix)]
  str.replace(old, new[, count])     заменена старой подстроки новой
  str.rfind(sub[, start[, end]])     Возвращает самый высокий индекс в строке
- str.rindex(sub[, start[, end]])
+ str.rindex(sub[, start[, end]])    Возвращает индекс в строке. ValueError если sub не найдена
  str.rjust(width[, fillchar])       Возвращает строку, выровненную по правому краю
- str.rpartition(sep)
- str.rsplit(sep=None, maxsplit=- 1)
- str.rstrip([chars])                копию строки с удаленными завершающими символами
- str.split(sep=None, maxsplit=- 1)  распадается. Возвращает список слов в строке
- str.splitlines(keepends=False)
- str.startswith(prefix[, start[, end]])
- str.strip([chars])
- str.swapcase()
- str.title()
- str.translate(table)
- str.upper()
- str.zfill(width)
+ str.rpartition(sep)      Возвращает до разделителя, разделитель и после разделителя.
+ str.rsplit(sep=None, maxsplit=- 1)  распадается. Возвращает список слов в строке справа
+ str.rstrip([chars])         Возвращает копию строки с удаленными завершающими символами
+ str.split(sep=None, maxsplit=- 1)   распадается. Возвращает список слов в строке
+ str.splitlines(keepends=False)  Возвращает список строк в строке, разрывая границы строк
+ str.startswith(prefix[, start[, end]])  Возвращает True, если строка начинается с prefix
+ str.strip([chars])          Возвращает копию строки с удаленными символами
+ str.swapcase()              случай обмена регистра
+ str.title()              слова начинаются с прописных букв, а остальные — строчными
+ str.translate(table)     При индексации по порядковому номеру Unicode возвращать строку
+ str.upper()              Возвращает копию строки, преобразованую в верхний регистр.
+ str.zfill(width)         Возвращает копию строки, заполненную цифрами ASCII '0'
 
 Строки также поддерживают два стиля форматирования строк. Первый обеспечивает большую степень
 гибкости и настройки (см. str.format(), Синтаксис строки формата и Пользовательское 
