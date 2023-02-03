@@ -1,5 +1,5 @@
             Bytearray Objects
-            Объекты Bytearray¶
+            Объекты Bytearray
 
 Объекты bytearray являются изменяемыми аналогами объектов bytes.
 """class bytearray([source[, encoding[, errors]]])"""
