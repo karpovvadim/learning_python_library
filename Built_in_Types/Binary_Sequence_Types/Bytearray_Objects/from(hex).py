@@ -27,7 +27,7 @@ print("\n---------hex([sep[, bytes_per_sep]]))--------------------")
 
 print(bytearray(b'\xf0\xf1\xf2').hex('_', 2))  # 'f0_f1f2'
 
-print(bytearray(b'UUDDLRLRAB').hex(' ', -4))
+print(bytearray(b'UUDDLRLRab').hex(' ', -4))
 
 # Добавлено в версии 3.5.
 

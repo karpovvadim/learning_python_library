@@ -31,53 +31,55 @@ b = a.replace(b"a", b"f")
 Следующие методы для байтов и объектов байтовых массивов могут использоваться с
 произвольными двоичными данными.
 
-bytes.count(sub[, start[, end]])
-bytearray.count(sub[, start[, end]])
+bytes.count(sub[, start[, end]])   Количество непересекающихся вхождений подстроки sub
+bytearray.count(sub[, start[, end]])        Аналогично str
 
-bytes.removeprefix(prefix, /)
-bytearray.removeprefix(prefix, /)
+bytes.removeprefix(prefix, /)      удалить prefix. возвращает string[len(prefix):]
+bytearray.removeprefix(prefix, /)           Аналогично str
 
-bytes.removesuffix(suffix, /)
-bytearray.removesuffix(suffix, /)
+bytes.removesuffix(suffix, /)      удалить суффикс. вернуть string[:-len(suffix)]
+bytearray.removesuffix(suffix, /)           Аналогично str
 
-bytes.decode(encoding='utf-8', errors='strict')
-bytearray.decode(encoding='utf-8', errors='strict')
+bytes.decode(encoding='utf-8', errors='strict')     преобразует байты в строку Python.
+bytearray.decode(encoding='utf-8', errors='strict') обратная ф-ция str.encode()
 
-bytes.endswith(suffix[, start[, end]])
-bytearray.endswith(suffix[, start[, end]])
+bytes.endswith(suffix[, start[, end]])  Возвращает True, если строка заканчивается suffix
+bytearray.endswith(suffix[, start[, end]])  Аналогично str
 
-bytes.find(sub[, start[, end]])
-bytearray.find(sub[, start[, end]])
+bytes.find(sub[, start[, end]])         Возвращает наименьший индекс в строке
+bytearray.find(sub[, start[, end]])         Аналогично str
 
-bytes.index(sub[, start[, end]])
-bytearray.index(sub[, start[, end]])
+bytes.index(sub[, start[, end]]) Возвращает номер первого вхождения или вызывает ValueError
+bytearray.index(sub[, start[, end]])        Аналогично str
 
-bytes.join(iterable)
-bytearray.join(iterable)
+bytes.join(iterable) Возвращает конкатенацию строк, которая в итерации соединиться c разделителем
+bytearray.join(iterable)                    Аналогично str
 
-static bytes.maketrans(from, to)
-static bytearray.maketrans(from, to)
+static bytes.maketrans(from, to)     возвращает таблицу перевода, для bytes.translate()
+static bytearray.maketrans(from, to) from и to должны быть байтоподобными объектами и 
+                                     содержать одинаковую длину.
 
-bytes.partition(sep)
-bytearray.partition(sep)
+bytes.partition(sep)        Возвращает до разделителя, разделитель и после разделителя
+bytearray.partition(sep)                    Аналогично str
 
-bytes.replace(old, new[, count])
-bytearray.replace(old, new[, count])
+bytes.replace(old, new[, count])   заменена старой подстроки новой
+bytearray.replace(old, new[, count])        Аналогично str
 
-bytes.rfind(sub[, start[, end]])
-bytearray.rfind(sub[, start[, end]])
+bytes.rfind(sub[, start[, end]])    Возвращает самый высокий индекс в строке
+bytearray.rfind(sub[, start[, end]])        Аналогично str
 
-bytes.rindex(sub[, start[, end]])
-bytearray.rindex(sub[, start[, end]])
+bytes.rindex(sub[, start[, end]]) Возвращает индекс в строке. ValueError если sub не найдена
+bytearray.rindex(sub[, start[, end]])       Аналогично str
 
-bytes.rpartition(sep)
-bytearray.rpartition(sep)
+bytes.rpartition(sep)       Возвращает до разделителя, разделитель и после разделителя.
+bytearray.rpartition(sep)                   Аналогично str
 
-bytes.startswith(prefix[, start[, end]])
-bytearray.startswith(prefix[, start[, end]])
+bytes.startswith(prefix[, start[, end]]) Возвращает True, если строка начинается с prefix
+bytearray.startswith(prefix[, start[, end]])    Аналогично str
 
-bytes.translate(table, /, delete=b'')
-bytearray.translate(table, /, delete=b'')
+bytes.translate(table, /, delete=b'') Возвращает копию байтов или объекта байтового массива,
+bytearray.translate(table, /, delete=b'') где все байты=delete удалены, а оставшиеся
+                                            сопоставлены с данной таблицей преобразования
 
 У следующих методов для байтов и объектов байтовых массивов поведение по умолчанию,
 предполагающее использование двоичных форматов, совместимых с ASCII, но все же могут
@@ -85,79 +87,79 @@ bytearray.translate(table, /, delete=b'')
 Обратите внимание, что все методы bytearray в этом разделе не работают на месте, а вместо
 этого создают новые объекты.
 
-bytes.center(width[, fillbyte])
-bytearray.center(width[, fillbyte])
+bytes.center(width[, fillbyte])         Возврат по центру
+bytearray.center(width[, fillbyte])     Аналогично str
 
-bytes.ljust(width[, fillbyte])
-bytearray.ljust(width[, fillbyte])
+bytes.ljust(width[, fillbyte]) Возвращает строку, выровненную по левому краю [заполнить]
+bytearray.ljust(width[, fillbyte])      Аналогично str
 
-bytes.lstrip([chars])
-bytearray.lstrip([chars])
+bytes.lstrip([chars])   копия строки с удалёнными ведущими символами [символы]
+bytearray.lstrip([chars])               Аналогично str
 
-bytes.rjust(width[, fillbyte])
-bytearray.rjust(width[, fillbyte])
+bytes.rjust(width[, fillbyte])  Возвращает строку, выровненную по правому краю
+bytearray.rjust(width[, fillbyte])      Аналогично str
 
-bytes.rsplit(sep=None, maxsplit=- 1)
-bytearray.rsplit(sep=None, maxsplit=- 1)
+bytes.rsplit(sep=None, maxsplit=- 1) распадается. Возвращает список слов в строке справа
+bytearray.rsplit(sep=None, maxsplit=- 1)    Аналогично str
 
-bytes.rstrip([chars])
-bytearray.rstrip([chars])
+bytes.rstrip([chars]) Возвращает копию строки с удаленными завершающими символами
+bytearray.rstrip([chars])               Аналогично str
 
-bytes.split(sep=None, maxsplit=- 1)
-bytearray.split(sep=None, maxsplit=- 1)
+bytes.split(sep=None, maxsplit=- 1) распадается. Возвращает список слов в строке
+bytearray.split(sep=None, maxsplit=- 1)     Аналогично str
 
-bytes.strip([chars])
-bytearray.strip([chars])
+bytes.strip([chars]) распадается. Возвращает список слов в строке с удаленными символами 
+bytearray.strip([chars])          в начале и в конце     Аналогично str
 
 Следующие ниже методы для байтов и объектов байтовых массивов предполагают использование
 двоичных форматов, совместимых с ASCII, и не должны применяться к произвольным двоичным
 данным. Обратите внимание, что все методы bytearray в этом разделе не работают на месте,
 а вместо этого создают новые объекты.
 
-bytes.capitalize()
-bytearray.capitalize()
+bytes.capitalize()      Первый символом - заглавная буква, остальные строчные.
+bytearray.capitalize()                  Аналогично str
 
-bytes.expandtabs(tabsize=8)
-bytearray.expandtabs(tabsize=8)
+bytes.expandtabs(tabsize=8)   Cимволы табуляции заменены одним или несколькими пробелами
+bytearray.expandtabs(tabsize=8)         Аналогично str
 
-bytes.isalnum()
-bytearray.isalnum()
+bytes.isalnum()         Состоит ли строка из цифр или букв
+bytearray.isalnum()                     Аналогично str
 
-bytes.isalpha()
-bytearray.isalpha()
+bytes.isalpha()         Состоит ли строка из букв
+bytearray.isalpha()                     Аналогично str
 
-bytes.isascii()
-bytearray.isascii()
+bytes.isascii()         True, если строка пуста или все символы ASCII
+bytearray.isascii()                     Аналогично str
 
-bytes.isdigit()
-bytearray.isdigit()
+bytes.isdigit()         Состоит ли строка из цифр
+bytearray.isdigit()                     Аналогично str
 
-bytes.islower()
-bytearray.islower()
+bytes.islower()         Состоит ли строка из символов в нижнем регистре
+bytearray.islower()                     Аналогично str
 
-bytes.isspace()
-bytearray.isspace()
+bytes.isspace()     True, если в строке есть только пробелы и есть хотя бы один символ
+bytearray.isspace()                     Аналогично str
 
-bytes.istitle()
-bytearray.istitle()
+bytes.istitle()     Начинаются ли слова в строке с заглавной буквы.
+bytearray.istitle()                     Аналогично str
 
-bytes.isupper()
-bytearray.isupper()
+bytes.isupper()     Состоит ли строка из символов в верхнем регистре
+bytearray.isupper()                     Аналогично str
 
-bytes.lower()
-bytearray.lower()
+bytes.lower()       все символы преобразованы в нижний регистр.
+bytearray.lower()                       Аналогично str
 
-bytes.splitlines(keepends=False)
-bytearray.splitlines(keepends=False)
+bytes.splitlines(keepends=False) Возвращает список строк в строке, разрывая границы строк
+bytearray.splitlines(keepends=False)    Аналогично str
 
-bytes.swapcase()
-bytearray.swapcase()
+bytes.swapcase()        случай обмена регистра
+bytearray.swapcase()                    Аналогично str
 
-bytes.title()
-bytearray.title()
+bytes.title()           слова начинаются с прописных букв, а остальные — строчными
+bytearray.title()                       Аналогично str
 
-bytes.upper()
-bytearray.upper()
+bytes.upper()           Возвращает копию строки, преобразованую в верхний регистр.
+bytearray.upper()                       Аналогично str
 
-bytes.zfill(width)
-bytearray.zfill(width)
+bytes.zfill(width)      Возвращает копию строки, заполненную цифрами ASCII '0'
+bytearray.zfill(width)                  Аналогично str

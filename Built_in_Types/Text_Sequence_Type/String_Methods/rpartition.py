@@ -5,6 +5,7 @@
 
 string = "Python is fun"
 print(string.rpartition('is '))  # 'is' separator is found
-print(string.rpartition('not '))  # 'not' separator is not found
+print(string.rpartition('not '))  # 'not ' separator is not found
 string = "Python is fun, isn't it"
 print(string.rpartition('is'))  # splits at last occurence of 'is'
+# (разбивается при последнем появлении 'is')
