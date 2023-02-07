@@ -152,10 +152,10 @@ bytearray.lower()                       Аналогично str
 bytes.splitlines(keepends=False) Возвращает список строк в строке, разрывая границы строк
 bytearray.splitlines(keepends=False)    Аналогично str
 
-bytes.swapcase()        случай обмена регистра
+bytes.swapcase()        Возвращает копию строки, случай обмена регистра
 bytearray.swapcase()                    Аналогично str
 
-bytes.title()           слова начинаются с прописных букв, а остальные — строчными
+bytes.title() Возвращает копию строки, слова начинаются с прописных букв, а остальные — строчными
 bytearray.title()                       Аналогично str
 
 bytes.upper()           Возвращает копию строки, преобразованую в верхний регистр.

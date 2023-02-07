@@ -13,7 +13,7 @@
 # Изменено в версии 3.9: Ошибки теперь проверяются в режиме разработки и в режиме debug mode
 # (отладки).
 
-string = 'pythön!_ÆÇÈ'
+string = 'pythön!_ÆÇÈ, Hello World!, '
 print('The string is:', string)
 string_utf = string.encode()
 print('The encoded version is:', string_utf)
