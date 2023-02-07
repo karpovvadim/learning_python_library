@@ -45,19 +45,22 @@ collections.abc.Sequence
 
 У memoryview есть несколько методов:
 
-__eq__(exporter)
+__eq__(exporter)     Memoryview и экспортер PEP 3118 (Пересмотр буферного протокола) равны
 
-tobytes(order='C')
+tobytes(order='C')   Возвращает данные в буфере в виде строки байтов
 
-hex([sep[, bytes_per_sep]])
+hex([sep[, bytes_per_sep]])  Возвращает строковый объект, содержащий две шестнадцатеричные
+                            цифры для каждого байта в буфере
 
-tolist()
+tolist()            Возвращает данные в буфере в виде списка элементов.
 
-toreadonly()
+toreadonly()  Возвращает версию объекта memoryview только для чтения. Исходный объект
+                memoryview не изменился.
 
-release()
+release()  Освобождение нижележащего буфера. После вызова этого метода любая дальнейшая
+                операция с представлением вызывает ValueError.
 
-cast(format[, shape])
+cast(format[, shape])  Преобразует memoryview в новый format или shape (форма)
 
 Также доступно несколько атрибутов, доступных только для чтения:
 
